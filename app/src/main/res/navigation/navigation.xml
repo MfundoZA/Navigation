@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/signUpFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.mfundoza.navigation.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.mfundoza.navigation.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="firstName"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="lastName"
+            app:argType="string"
+            app:nullable="true" />
+        <argument android:name="dateOfBirth" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="password"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="premiumService"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+</navigation>
